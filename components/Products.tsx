@@ -3,7 +3,7 @@ import { products } from "@/lib/site";
 
 export default function Products() {
   return (
-    <section id="products" className="bg-ivory py-24 lg:py-32">
+    <section id="products" className="bg-ivory py-24 lg:py-12">
       <div className="mx-auto max-w-shell px-6 lg:px-8">
         <SectionHeading
           kicker="The range"

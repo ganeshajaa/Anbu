@@ -2,9 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: light; }
+:root {
+  color-scheme: light;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+  
+}
+
+body {
+  margin: 0;
+  background: #F8F4EC;
+  color: #241C15;
+  overscroll-behavior-y: none;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

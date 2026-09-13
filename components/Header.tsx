@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { company, nav } from "@/lib/site";
 
+
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [solid, setSolid] = useState(false);
@@ -23,47 +24,57 @@ export default function Header() {
           : "bg-transparent border-b border-transparent")
       }
     >
-      <div className="mx-auto flex max-w-shell items-center justify-between px-6 py-5 lg:px-8">
-        <a href="#top" className="flex items-baseline gap-2 text-ivory no-underline">
-          <span className="font-display text-2xl font-normal tracking-wide">
-            {company.name}
-          </span>
-          <span className="hidden text-[11px] tracking-wide2 text-champagne sm:inline">
-            {company.suffix}
-          </span>
-        </a>
+      <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-5 py-1.5 sm:px-6 md:px-8 lg:py-2 xl:px-10">
 
-        <nav className="hidden items-center gap-9 md:flex">
-          {nav.map((n) => (
-            <a
-              key={n.href}
-              href={n.href}
-              className="text-sm font-light text-ivory/75 no-underline transition-colors hover:text-champagne"
-            >
-              {n.label}
-            </a>
-          ))}
-        </nav>
+  {/* Logo + Company Name */}
+  <a
+    href="#top"
+    className="flex min-w-0 items-center gap-3 text-ivory no-underline"
+  >
+    <img
+      src="/logo/logo.jpeg"
+      alt={`${company.name} logo`}
+      className="h-22 w-32 shrink-0 sm:h-16 sm:w-16 lg:h-[72px] lg:w-[140px]"
+    />
 
-        <div className="flex items-center gap-4">
-          <a
-            href="#enquiry"
-            className="hidden border border-champagne/60 px-5 py-2 text-sm font-light text-champagne no-underline transition-colors hover:bg-champagne hover:text-onyx sm:inline-block"
-          >
-            Request a quote
-          </a>
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            onClick={() => setOpen(!open)}
-            className="flex h-8 w-8 flex-col items-center justify-center gap-[5px] md:hidden"
-          >
-            <span className="block h-px w-6 bg-ivory" />
-            <span className="block h-px w-6 bg-ivory" />
-          </button>
-        </div>
-      </div>
+    
+  </a>
+
+  {/* Navigation */}
+  <nav className="hidden items-center gap-6 md:flex lg:gap-9">
+    {nav.map((n) => (
+      <a
+        key={n.href}
+        href={n.href}
+        className="text-lg font-light text-ivory/75 no-underline transition-colors hover:text-champagne"
+      >
+        {n.label}
+      </a>
+    ))}
+  </nav>
+
+  {/* Right side */}
+  <div className="flex shrink-0 items-center gap-3 sm:gap-4">
+    <a
+      href="#enquiry"
+      className="hidden border border-champagne/60 px-4 py-2 text-sm font-light text-champagne no-underline transition-colors hover:bg-champagne hover:text-onyx sm:inline-block lg:px-5"
+    >
+      Request a quote
+    </a>
+
+    <button
+      type="button"
+      aria-label={open ? "Close menu" : "Open menu"}
+      aria-expanded={open}
+      onClick={() => setOpen(!open)}
+      className="flex h-9 w-9 flex-col items-center justify-center gap-[5px] md:hidden"
+    >
+      <span className="block h-px w-6 bg-ivory" />
+      <span className="block h-px w-6 bg-ivory" />
+    </button>
+  </div>
+
+</div>
 
       {open && (
         <div className="border-t border-champagne/20 bg-onyx px-6 pb-6 pt-2 md:hidden">

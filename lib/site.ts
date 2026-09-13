@@ -1,15 +1,15 @@
 // ── Edit everything about the business from this one file ──────────────
 
 export const company = {
-  name: "Sahyadri",
-  suffix: "Spice Exports",
-  legalName: "Sahyadri Spice Exports Pvt. Ltd.",
-  email: "trade@sahyadrispice.com",
-  phone: "+91 44 0000 0000",
-  address: ["Unit 4, Spice Trade Complex", "Anna Salai, Chennai 600002", "Tamil Nadu, India"],
-  iec: "0000000000",
-  fssai: "00000000000000",
-  since: "2011",
+  name: "Anbu",
+  suffix: "Spices And Snacks",
+  legalName: "Anbu Spices and Snacks.",
+  email: "anbuspicesandsnacks@gmail.com",
+  phone: "+91 89 40 399 526",
+  address: ["No 2 bharthyar street,Pammal, Chennai 600075", "Tamil Nadu, India"],
+  iec: "EMHPG5268M",
+  fssai: "To Be Updated",
+  since: "2026",
 };
 
 export const stats = [
@@ -20,16 +20,16 @@ export const stats = [
 ];
 
 export const supply = [
-  { item: "Turmeric — Erode, double polished", state: "Ready" },
-  { item: "Black pepper — 550 g/l", state: "Ready" },
-  { item: "Green cardamom — 8 mm bold", state: "Limited" },
-  { item: "Dried red chilli — Guntur S17", state: "Ready" },
+  { item: "Turmeric Powder— Erode,Curcumin 3%-5%", state: "Ready" },
+  { item: "Black pepper Powder", state: "Ready" },
+  { item: "Moringa leaf powder" , state: "Ready" },
+  { item: "Red chilli Powder", state: "Ready" },
 ];
 
 export const terms = [
-  { label: "Minimum order", value: "1 × 20′ FCL" },
-  { label: "Trade terms", value: "FOB · CIF · CFR" },
-  { label: "Loading ports", value: "Chennai · Cochin" },
+  { label: "Minimum order", value: "10,000 Pieces" },
+  { label: "Trade terms", value: "FOB" },
+  { label: "Loading ports", value: "Chennai" },
 ];
 
 export type Product = {
@@ -41,7 +41,7 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    name: "Turmeric",
+    name: "Turmeric Powder",
     latin: "Curcuma longa",
     hue: "#D99B12",
     specs: [
@@ -52,7 +52,7 @@ export const products: Product[] = [
     ],
   },
   {
-    name: "Black pepper",
+    name: "Black pepper Powder",
     latin: "Piper nigrum",
     hue: "#4A382A",
     specs: [
@@ -74,7 +74,7 @@ export const products: Product[] = [
     ],
   },
   {
-    name: "Dried red chilli",
+    name: "Red chilli Powder",
     latin: "Capsicum annuum",
     hue: "#A8331E",
     specs: [

@@ -2,7 +2,7 @@ import { stats, supply, terms } from "@/lib/site";
 
 export default function Hero() {
   return (
-    <section className="grain relative overflow-hidden bg-onyx pt-32 text-ivory lg:pt-40">
+    <section className="grain relative overflow-hidden bg-onyx pt-32 pb-20 text-ivory lg:pt-40 lg:pb-20">
       {/* one warm glow, low and off-centre — the single decorative move */}
       <div
         aria-hidden
@@ -14,15 +14,15 @@ export default function Hero() {
         <div className="grid items-end gap-14 lg:grid-cols-[1.3fr_0.85fr]">
           <div>
             <p className="font-display text-lg font-light italic text-champagne">
-              Sourced at the farm. Shipped to your specification.
+              From South India's Finest, to the world.
             </p>
             <div className="rule-gold my-7 max-w-[220px]" />
-            <h1 className="font-display text-[clamp(2.9rem,7.5vw,5.5rem)] font-light leading-[1.03] tracking-[-0.01em] text-ivory">
-              The spices of southern India,
+            <h1 className="font-display text-[50px] font-light leading-[1.03] tracking-[-0.01em] text-ivory">
+              “Building Reliable Partnerships
               <br />
-              handled with the care
+               Across Global Markets”
               <br />
-              a contract deserves.
+             
             </h1>
             <p className="mt-8 max-w-[46ch] text-[1.02rem] font-light leading-relaxed text-ivory/65">
               We buy direct from growers in Kerala, Karnataka and Tamil Nadu,
@@ -80,7 +80,7 @@ export default function Hero() {
         </div>
 
         {/* stats */}
-        <div className="mt-20 grid grid-cols-2 border-t border-ivory/15 lg:grid-cols-4">
+        {/* <div className="mt-20 grid grid-cols-2 border-t border-ivory/15 lg:grid-cols-4">
           {stats.map((s, i) => (
             <div
               key={s.label}
@@ -96,7 +96,7 @@ export default function Hero() {
               <p className="mt-2 text-[0.82rem] font-light text-ivory/55">{s.label}</p>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

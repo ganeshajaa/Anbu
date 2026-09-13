@@ -12,13 +12,13 @@ const display = Cormorant_Garamond({
 
 const sans = Jost({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["400", "500", "600"],
   variable: "--font-sans",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Sahyadri Spice Exports — Indian spices, sourced and shipped",
+  title: "Anbu Spice Exports — Indian spices, sourced and shipped",
   description:
     "Export house shipping lab-tested Indian spices — turmeric, black pepper, cardamom, chilli and seed spices — to buyers in Europe, North America, Japan and the Gulf.",
 };
