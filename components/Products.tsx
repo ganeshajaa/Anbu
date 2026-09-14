@@ -7,7 +7,7 @@ export default function Products() {
       <div className="mx-auto max-w-shell px-6 lg:px-8">
         <SectionHeading
           kicker="The range"
-          title="Nine lines, graded and packed to order"
+          title="Six lines, graded and packed to order"
           body="Every product below is machine-cleaned, graded and packed against your contract. Tell us the specification you buy to and we quote against it — or ask for our standard spec sheet to start from."
         />
 
