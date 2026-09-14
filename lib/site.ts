@@ -6,10 +6,7 @@ export const company = {
   legalName: "Anbu Spices and Snacks.",
   email: "anbuspicesandsnacks@gmail.com",
   phone: "+91 89 40 399 526",
-  address: [
-    "No 2 bharthyar street,Pammal, Chennai 600075",
-    "Tamil Nadu, India",
-  ],
+  address: ["No 2 bharthyar street,Pammal, Chennai 600075", "Tamil Nadu, India"],
   iec: "EMHPG5268M",
   fssai: "To Be Updated",
   since: "2026",
@@ -48,50 +45,46 @@ export const products: Product[] = [
     latin: "Curcuma longa",
     hue: "#D99B12",
     specs: [
-      ["Form", "Powder"],
+      ["Form", "Fingers / powder"],
       ["Curcumin", "3.0 – 5.0%"],
       ["Moisture", "Max 10%"],
-      ["Origin", "Erode, Tamil Nadu"],
-      ["Availability", "Ready"],
+      ["Origin", "Erode, Salem"],
     ],
   },
 
   {
-    name: "Black Pepper Powder",
+    name: "Black pepper Powder",
     latin: "Piper nigrum",
     hue: "#4A382A",
     specs: [
-      ["Form", "Powder"],
+      ["Grade", "500 / 550 g/l"],
       ["Piperine", "Min 3.5%"],
       ["Moisture", "Max 12%"],
-      ["Origin", "India"],
-      ["Availability", "Ready"],
+      ["Origin", "Idukki, Wayanad"],
     ],
   },
 
   {
-    name: "Moringa Leaf Powder",
+    name: "Moringa leaf powder",
     latin: "Moringa oleifera",
     hue: "#5C8144",
     specs: [
-      ["Form", "Powder"],
       ["Mesh", "80 – 100"],
       ["Drying", "Shade dried"],
+      ["Moisture", "Max 7%"],
       ["Origin", "Tamil Nadu"],
-      ["Availability", "Ready"],
     ],
   },
 
   {
-    name: "Red Chilli Powder",
+    name: "Red chilli Powder",
     latin: "Capsicum annuum",
     hue: "#A8331E",
     specs: [
-      ["Form", "Powder"],
       ["Varieties", "S17 · Byadgi · 334"],
       ["Heat", "8,000 – 40,000 SHU"],
+      ["Form", "Whole / stemless / powder"],
       ["Origin", "Guntur, Byadgi"],
-      ["Availability", "Ready"],
     ],
   },
 
@@ -103,19 +96,6 @@ export const products: Product[] = [
       ["Category", "Traditional Snacks"],
       ["Origin", "Tamil Nadu"],
       ["Packing", "Retail / Bulk"],
-      ["Availability", "Ready"],
-    ],
-  },
-
-  {
-    name: "Something not listed?",
-    latin: "Tell us what you need",
-    hue: "#B08D48",
-    specs: [
-      ["Custom sourcing", "Available"],
-      ["Specification", "As requested"],
-      ["Packing", "As requested"],
-      ["Enquiry", "Contact us"],
     ],
   },
 ];
@@ -214,4 +194,3 @@ export const nav = [
   { href: "#process", label: "How we work" },
   { href: "#markets", label: "Markets" },
 ];
-```
