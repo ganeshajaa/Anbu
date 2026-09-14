@@ -1,4 +1,3 @@
-```ts
 // ── Edit everything about the business from this one file ──────────────
 
 export const company = {
