@@ -1,3 +1,4 @@
+```ts
 // ── Edit everything about the business from this one file ──────────────
 
 export const company = {
@@ -6,7 +7,10 @@ export const company = {
   legalName: "Anbu Spices and Snacks.",
   email: "anbuspicesandsnacks@gmail.com",
   phone: "+91 89 40 399 526",
-  address: ["No 2 bharthyar street,Pammal, Chennai 600075", "Tamil Nadu, India"],
+  address: [
+    "No 2 bharthyar street,Pammal, Chennai 600075",
+    "Tamil Nadu, India",
+  ],
   iec: "EMHPG5268M",
   fssai: "To Be Updated",
   since: "2026",
@@ -15,14 +19,14 @@ export const company = {
 export const stats = [
   { value: "18", label: "Countries shipped to" },
   { value: "340", label: "Containers cleared in 2025" },
-  { value: "09", label: "Lines in regular supply" },
+  { value: "06", label: "Lines in regular supply" },
   { value: company.since, label: "Trading since" },
 ];
 
 export const supply = [
   { item: "Turmeric Powder— Erode,Curcumin 3%-5%", state: "Ready" },
   { item: "Black pepper Powder", state: "Ready" },
-  { item: "Moringa leaf powder" , state: "Ready" },
+  { item: "Moringa leaf powder", state: "Ready" },
   { item: "Red chilli Powder", state: "Ready" },
 ];
 
@@ -45,87 +49,74 @@ export const products: Product[] = [
     latin: "Curcuma longa",
     hue: "#D99B12",
     specs: [
-      ["Form", "Fingers / powder"],
+      ["Form", "Powder"],
       ["Curcumin", "3.0 – 5.0%"],
       ["Moisture", "Max 10%"],
-      ["Origin", "Erode, Salem"],
+      ["Origin", "Erode, Tamil Nadu"],
+      ["Availability", "Ready"],
     ],
   },
+
   {
-    name: "Black pepper Powder",
+    name: "Black Pepper Powder",
     latin: "Piper nigrum",
     hue: "#4A382A",
     specs: [
-      ["Grade", "500 / 550 g/l"],
+      ["Form", "Powder"],
       ["Piperine", "Min 3.5%"],
       ["Moisture", "Max 12%"],
-      ["Origin", "Idukki, Wayanad"],
+      ["Origin", "India"],
+      ["Availability", "Ready"],
     ],
   },
+
   {
-    name: "Green cardamom",
-    latin: "Elettaria cardamomum",
-    hue: "#7A9450",
-    specs: [
-      ["Size", "7 – 8 mm bold"],
-      ["Volatile oil", "Min 3.5%"],
-      ["Moisture", "Max 11%"],
-      ["Origin", "Idukki, Kumily"],
-    ],
-  },
-  {
-    name: "Red chilli Powder",
-    latin: "Capsicum annuum",
-    hue: "#A8331E",
-    specs: [
-      ["Varieties", "S17 · Byadgi · 334"],
-      ["Heat", "8,000 – 40,000 SHU"],
-      ["Form", "Whole / stemless / powder"],
-      ["Origin", "Guntur, Byadgi"],
-    ],
-  },
-  {
-    name: "Cumin seed",
-    latin: "Cuminum cyminum",
-    hue: "#B08A54",
-    specs: [
-      ["Purity", "99% / 99.5% cleaned"],
-      ["Volatile oil", "Min 2.5%"],
-      ["Moisture", "Max 8%"],
-      ["Origin", "Unjha, Gujarat"],
-    ],
-  },
-  {
-    name: "Coriander seed",
-    latin: "Coriandrum sativum",
-    hue: "#9AA765",
-    specs: [
-      ["Type", "Eagle / Scooter / Split"],
-      ["Purity", "99%"],
-      ["Moisture", "Max 9%"],
-      ["Origin", "Ramganj, Kota"],
-    ],
-  },
-  {
-    name: "Fenugreek seed",
-    latin: "Trigonella foenum-graecum",
-    hue: "#C79A2E",
-    specs: [
-      ["Purity", "99%"],
-      ["Admixture", "Max 1%"],
-      ["Moisture", "Max 9%"],
-      ["Origin", "Rajasthan"],
-    ],
-  },
-  {
-    name: "Moringa leaf powder",
+    name: "Moringa Leaf Powder",
     latin: "Moringa oleifera",
     hue: "#5C8144",
     specs: [
+      ["Form", "Powder"],
       ["Mesh", "80 – 100"],
       ["Drying", "Shade dried"],
-      ["Moisture", "Max 7%"],
       ["Origin", "Tamil Nadu"],
+      ["Availability", "Ready"],
+    ],
+  },
+
+  {
+    name: "Red Chilli Powder",
+    latin: "Capsicum annuum",
+    hue: "#A8331E",
+    specs: [
+      ["Form", "Powder"],
+      ["Varieties", "S17 · Byadgi · 334"],
+      ["Heat", "8,000 – 40,000 SHU"],
+      ["Origin", "Guntur, Byadgi"],
+      ["Availability", "Ready"],
+    ],
+  },
+
+  {
+    name: "Cultural Traditional Snacks",
+    latin: "Traditional Indian Snacks",
+    hue: "#C79A2E",
+    specs: [
+      ["Category", "Traditional Snacks"],
+      ["Origin", "Tamil Nadu"],
+      ["Packing", "Retail / Bulk"],
+      ["Availability", "Ready"],
+    ],
+  },
+
+  {
+    name: "Something not listed?",
+    latin: "Tell us what you need",
+    hue: "#B08D48",
+    specs: [
+      ["Custom sourcing", "Available"],
+      ["Specification", "As requested"],
+      ["Packing", "As requested"],
+      ["Enquiry", "Contact us"],
     ],
   },
 ];
@@ -186,12 +177,36 @@ export const steps = [
 ];
 
 export const markets = [
-  { region: "European Union", body: "EU MRL-compliant lots with full residue panels.", ports: "Rotterdam · Hamburg · Antwerp · Valencia" },
-  { region: "United States & Canada", body: "FDA prior notice and FSVP documentation handled.", ports: "New York · Savannah · Los Angeles · Montreal" },
-  { region: "Middle East", body: "Retail and food-service packing, halal certification on request.", ports: "Jebel Ali · Dammam · Doha" },
-  { region: "East & Southeast Asia", body: "Tight-tolerance lots for Japanese and Korean buyers.", ports: "Yokohama · Busan · Singapore · Port Klang" },
-  { region: "United Kingdom", body: "Post-Brexit import documentation and UK MRL compliance.", ports: "Felixstowe · London Gateway" },
-  { region: "Africa & Australia", body: "Growing lanes for turmeric, chilli and seed spices.", ports: "Durban · Mombasa · Melbourne · Sydney" },
+  {
+    region: "European Union",
+    body: "EU MRL-compliant lots with full residue panels.",
+    ports: "Rotterdam · Hamburg · Antwerp · Valencia",
+  },
+  {
+    region: "United States & Canada",
+    body: "FDA prior notice and FSVP documentation handled.",
+    ports: "New York · Savannah · Los Angeles · Montreal",
+  },
+  {
+    region: "Middle East",
+    body: "Retail and food-service packing, halal certification on request.",
+    ports: "Jebel Ali · Dammam · Doha",
+  },
+  {
+    region: "East & Southeast Asia",
+    body: "Tight-tolerance lots for Japanese and Korean buyers.",
+    ports: "Yokohama · Busan · Singapore · Port Klang",
+  },
+  {
+    region: "United Kingdom",
+    body: "Post-Brexit import documentation and UK MRL compliance.",
+    ports: "Felixstowe · London Gateway",
+  },
+  {
+    region: "Africa & Australia",
+    body: "Growing lanes for turmeric, chilli and seed spices.",
+    ports: "Durban · Mombasa · Melbourne · Sydney",
+  },
 ];
 
 export const nav = [
@@ -200,3 +215,4 @@ export const nav = [
   { href: "#process", label: "How we work" },
   { href: "#markets", label: "Markets" },
 ];
+```
