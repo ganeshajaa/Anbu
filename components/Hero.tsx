@@ -1,14 +1,20 @@
+import SpiceDust from "./SpiceDust";
+import Ticker from "./Ticker";
 import { stats, supply, terms } from "@/lib/site";
 
 export default function Hero() {
   return (
-    <section className="grain relative overflow-hidden bg-onyx pt-28 pb-16 text-ivory sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-20">
+    <>
+    <section
+      className="grain relative overflow-hidden bg-onyx pt-28 pb-16 text-ivory sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-20">
       {/* one warm glow, low and off-centre — the single decorative move */}
       <div
         aria-hidden
         className="glow-drift pointer-events-none absolute -left-40 top-1/3 h-[520px] w-[520px] rounded-full opacity-[0.18] blur-3xl"
         style={{ background: "radial-gradient(circle, #C8A96A 0%, transparent 70%)" }}
       />
+
+      <SpiceDust />
 
       <div className="relative z-10 mx-auto max-w-shell px-6 lg:px-8">
         <div className="grid items-end gap-10 lg:grid-cols-[1.3fr_0.85fr] lg:gap-14">
@@ -115,5 +121,7 @@ export default function Hero() {
         </div> */}
       </div>
     </section>
+    <Ticker />
+    </>
   );
 }

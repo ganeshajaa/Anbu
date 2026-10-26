@@ -1,4 +1,5 @@
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 import { checks, certifications } from "@/lib/site";
 
 export default function Quality() {
@@ -12,41 +13,44 @@ export default function Quality() {
               title="The part buyers actually get burned on"
               body="Rejections rarely come down to price. They come down to a residue nobody screened for, a moisture reading that shifted in transit, or paperwork that did not match the container."
             />
-            <p className="mt-6 max-w-[50ch] text-[1.02rem] font-light leading-relaxed text-stone">
-              We test before loading, not after a complaint. Each lot is sampled
-              and sent to an NABL-accredited laboratory, and the report travels
-              with the shipment. If a result falls outside your specification,
-              you hear about it before the container moves.
-            </p>
+            <Reveal delay={150}>
+              <p className="mt-6 max-w-[50ch] text-[1.02rem] font-light leading-relaxed text-stone">
+                We test before loading, not after a complaint. Each lot is sampled
+                and sent to an NABL-accredited laboratory, and the report travels
+                with the shipment. If a result falls outside your specification,
+                you hear about it before the container moves.
+              </p>
 
-            <div className="mt-10 flex flex-wrap gap-2">
-              {certifications.map((c) => (
-                <span
-                  key={c}
-                  className="border border-sand bg-ivory px-4 py-2 text-[0.8rem] font-light text-stone"
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
+              <div className="mt-10 flex flex-wrap gap-2">
+                {certifications.map((c) => (
+                  <span
+                    key={c}
+                    className="border border-sand bg-ivory px-4 py-2 text-[0.8rem] font-light text-stone transition-colors duration-300 hover:border-champagne hover:text-espresso"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
           </div>
 
           <dl className="lg:pt-4">
             {checks.map((c, i) => (
-              <div
+              <Reveal
                 key={c.title}
+                delay={i * 90}
                 className={
-                  "grid gap-2 py-7 sm:grid-cols-[1fr_1.5fr] sm:gap-8 " +
+                  "group grid gap-2 py-7 sm:grid-cols-[1fr_1.5fr] sm:gap-8 " +
                   (i > 0 ? "border-t border-sand" : "")
                 }
               >
-                <dt className="font-display text-[1.35rem] font-light leading-snug text-espresso">
+                <dt className="font-display text-[1.35rem] font-light leading-snug text-espresso transition-all duration-300 group-hover:translate-x-2 group-hover:text-gold">
                   {c.title}
                 </dt>
                 <dd className="text-[0.95rem] font-light leading-relaxed text-stone">
                   {c.body}
                 </dd>
-              </div>
+              </Reveal>
             ))}
           </dl>
         </div>

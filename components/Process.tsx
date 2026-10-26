@@ -1,4 +1,5 @@
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 import { steps } from "@/lib/site";
 
 export default function Process() {
@@ -13,19 +14,21 @@ export default function Process() {
         />
 
         <ol className="mt-16 grid gap-px border border-ivory/12 bg-ivory/12 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((s) => (
-            <li key={s.n} className="bg-onyx p-8">
-              <span className="font-display text-2xl font-light text-champagne">
-                {s.n}
-              </span>
-              <div className="rule-gold my-5 max-w-[48px]" />
-              <h3 className="font-display text-[1.45rem] font-light leading-snug text-ivory">
-                {s.title}
-              </h3>
-              <p className="mt-3 text-[0.9rem] font-light leading-relaxed text-ivory/55">
-                {s.body}
-              </p>
-            </li>
+          {steps.map((s, i) => (
+            <Reveal as="li" key={s.n} delay={i * 120} className="bg-onyx">
+              <div className="group h-full p-8 transition-colors duration-500 hover:bg-espresso/60">
+                <span className="font-display text-2xl font-light text-champagne transition-colors duration-500 group-hover:text-ivory">
+                  {s.n}
+                </span>
+                <div className="rule-gold my-5 max-w-[48px] transition-[max-width] duration-500 group-hover:max-w-[96px]" />
+                <h3 className="font-display text-[1.45rem] font-light leading-snug text-ivory">
+                  {s.title}
+                </h3>
+                <p className="mt-3 text-[0.9rem] font-light leading-relaxed text-ivory/55 transition-colors duration-500 group-hover:text-ivory/75">
+                  {s.body}
+                </p>
+              </div>
+            </Reveal>
           ))}
         </ol>
       </div>

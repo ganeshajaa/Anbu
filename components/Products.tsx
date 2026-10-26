@@ -1,19 +1,18 @@
 import Image from "next/image";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
+import QuoteLink from "./QuoteLink";
 import { products } from "@/lib/site";
 
 export default function Products() {
   return (
     <section id="products" className="bg-ivory py-16 sm:py-24 lg:py-12">
       <div className="mx-auto max-w-shell px-6 lg:px-8">
-        <Reveal>
-          <SectionHeading
-            kicker="The range"
-            title="Spices and snacks, packed to order"
-            body="Every product below is machine-cleaned, graded and packed against your contract. Tell us the specification you buy to and we quote against it — or ask for our standard spec sheet to start from."
-          />
-        </Reveal>
+        <SectionHeading
+          kicker="The range"
+          title="Spices and snacks, packed to order"
+          body="Every product below is machine-cleaned, graded and packed against your contract. Tell us the specification you buy to and we quote against it — or ask for our standard spec sheet to start from."
+        />
 
         <div className="mt-16 grid gap-px border border-sand bg-sand sm:grid-cols-2 lg:grid-cols-3">
           {products.map((p, i) => (
@@ -70,13 +69,13 @@ export default function Products() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
 
-                {/* quote button slides up from the bottom */}
-                <a
-                  href="#enquiry"
-                  className="absolute inset-x-0 bottom-0 translate-y-full [@media(hover:none)]:hidden bg-onyx/90 px-6 py-4 text-center text-sm font-light tracking-wide text-champagne no-underline backdrop-blur-sm transition-transform duration-500 ease-out group-hover/img:translate-y-0 group-focus-within/img:translate-y-0 hover:text-ivory"
+                {/* quote button slides up from the bottom (mouse devices only) */}
+                <QuoteLink
+                  product={p.name}
+                  className="absolute inset-x-0 bottom-0 translate-y-full bg-onyx/90 px-6 py-4 text-center text-sm font-light tracking-wide text-champagne no-underline backdrop-blur-sm transition-transform duration-500 ease-out hover:text-ivory group-hover/img:translate-y-0 group-focus-within/img:translate-y-0 [@media(hover:none)]:hidden"
                 >
                   Request a quote <span aria-hidden>→</span>
-                </a>
+                </QuoteLink>
               </div>
 
               <span
@@ -105,6 +104,14 @@ export default function Products() {
                   </div>
                 ))}
               </dl>
+
+              {/* works on every device, and pre-selects this product in the enquiry form */}
+              <QuoteLink
+                product={p.name}
+                className="link-underline mt-6 inline-block text-[0.85rem] font-light text-gold no-underline transition-colors hover:text-espresso"
+              >
+                Request this product <span aria-hidden>→</span>
+              </QuoteLink>
             </Reveal>
           ))}
 

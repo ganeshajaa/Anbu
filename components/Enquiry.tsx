@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SectionHeading from "./SectionHeading";
 import { company, products } from "@/lib/site";
 
 // text-base (16px) on phones stops iPhones from zooming into the field on focus
 const field =
-  "w-full border border-espresso/15 bg-ivory px-4 py-3 text-base font-light text-espresso placeholder:text-stone/60 focus:border-champagne focus:outline-none sm:text-[0.95rem]";
+  "w-full border border-espresso/15 bg-ivory px-4 py-3 text-base font-light text-espresso placeholder:text-stone/60 transition-[border-color,box-shadow] duration-300 focus:border-champagne focus:shadow-[0_0_0_3px_rgba(200,169,106,0.15)] focus:outline-none sm:text-[0.95rem]";
 const label = "mb-2 block text-[0.82rem] font-light text-stone";
 
 export default function Enquiry() {
@@ -15,6 +15,27 @@ export default function Enquiry() {
     msg: "",
   });
   const [sending, setSending] = useState(false);
+  const [picked, setPicked] = useState(false);
+  const productRef = useRef<HTMLSelectElement>(null);
+
+  // when a visitor clicks "Request this product" on a card, fill in the Product field
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const onPick = (e: Event) => {
+      const name = (e as CustomEvent<string>).detail;
+      if (productRef.current && name) {
+        productRef.current.value = name;
+        setPicked(true);
+        clearTimeout(timer);
+        timer = setTimeout(() => setPicked(false), 1800);
+      }
+    };
+    window.addEventListener("anbu:select-product", onPick);
+    return () => {
+      window.removeEventListener("anbu:select-product", onPick);
+      clearTimeout(timer);
+    };
+  }, []);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -92,7 +113,16 @@ export default function Enquiry() {
             </div>
             <div>
               <label className={label} htmlFor="product">Product</label>
-              <select id="product" name="product" className={field} defaultValue={products[0].name}>
+              <select
+                id="product"
+                name="product"
+                ref={productRef}
+                className={
+                  field +
+                  (picked ? " !border-champagne !shadow-[0_0_0_3px_rgba(200,169,106,0.3)]" : "")
+                }
+                defaultValue={products[0].name}
+              >
                 {products.map((p) => (
                   <option key={p.name}>{p.name}</option>
                 ))}
@@ -116,9 +146,10 @@ export default function Enquiry() {
 
             {status.kind !== "idle" && (
               <p
+                key={status.kind + status.msg}
                 role="status"
                 className={
-                  "sm:col-span-2 border-l-2 bg-ivory px-4 py-3 text-[0.9rem] font-light " +
+                  "hero-in sm:col-span-2 border-l-2 bg-ivory px-4 py-3 text-[0.9rem] font-light " +
                   (status.kind === "sent"
                     ? "border-champagne text-espresso"
                     : "border-[#A8331E] text-espresso")

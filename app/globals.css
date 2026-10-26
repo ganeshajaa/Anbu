@@ -197,3 +197,90 @@ section[id] {
     transform: none !important;
   }
 }
+
+/* ── Part 2: paste BELOW the first animations block in globals.css ───── */
+
+/* Text selection uses your champagne gold */
+::selection {
+  background: #c8a96a;
+  color: #111;
+}
+
+/* Clear gold focus ring for keyboard users */
+:focus-visible {
+  outline: 2px solid #c8a96a;
+  outline-offset: 3px;
+}
+
+/* ── Ticker band ── */
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.ticker-track {
+  animation: ticker 45s linear infinite;
+}
+
+/* ── Spice dust in the hero ── */
+@keyframes dust-rise {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  12% {
+    opacity: var(--alpha, 0.4);
+  }
+  85% {
+    opacity: var(--alpha, 0.4);
+  }
+  100% {
+    transform: translate(var(--drift, 0px), -780px);
+    opacity: 0;
+  }
+}
+.dust {
+  position: absolute;
+  bottom: -12px;
+  border-radius: 9999px;
+  background: #c8a96a;
+  opacity: 0;
+  animation: dust-rise linear infinite;
+}
+
+/* ── Gold rule under section headings draws itself when it scrolls in ── */
+.reveal .rule-grow {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s;
+}
+.reveal.is-visible .rule-grow {
+  transform: scaleX(1);
+}
+
+/* ── Nav link for the section you are currently reading ── */
+.link-underline.is-active::after {
+  transform: scaleX(1);
+}
+
+@media (scripting: none) {
+  .reveal .rule-grow {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+  .dust {
+    display: none;
+  }
+  .reveal .rule-grow {
+    transform: none;
+    transition: none;
+  }
+}

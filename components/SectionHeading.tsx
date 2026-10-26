@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 export default function SectionHeading({
   kicker,
   title,
@@ -11,7 +13,7 @@ export default function SectionHeading({
 }) {
   const dark = tone === "dark";
   return (
-    <div className="max-w-[62ch]">
+    <Reveal className="max-w-[62ch]">
       <p
         className={
           "font-display text-lg font-light italic " +
@@ -20,7 +22,7 @@ export default function SectionHeading({
       >
         {kicker}
       </p>
-      <div className="rule-gold my-5 max-w-[160px]" />
+      <div className="rule-gold rule-grow my-5 max-w-[160px]" />
       <h2
         className={
           "font-display text-[clamp(2rem,4.6vw,3.2rem)] font-light leading-[1.12] " +
@@ -39,6 +41,6 @@ export default function SectionHeading({
           {body}
         </p>
       )}
-    </div>
+    </Reveal>
   );
 }
