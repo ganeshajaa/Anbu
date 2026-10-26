@@ -4,8 +4,9 @@ import { useState } from "react";
 import SectionHeading from "./SectionHeading";
 import { company, products } from "@/lib/site";
 
+// text-base (16px) on phones stops iPhones from zooming into the field on focus
 const field =
-  "w-full border border-espresso/15 bg-ivory px-4 py-3 text-[0.95rem] font-light text-espresso placeholder:text-stone/60 focus:border-champagne focus:outline-none";
+  "w-full border border-espresso/15 bg-ivory px-4 py-3 text-base font-light text-espresso placeholder:text-stone/60 focus:border-champagne focus:outline-none sm:text-[0.95rem]";
 const label = "mb-2 block text-[0.82rem] font-light text-stone";
 
 export default function Enquiry() {
@@ -46,16 +47,16 @@ export default function Enquiry() {
   }
 
   return (
-    <section id="enquiry" className="bg-sand/40 py-24 lg:py-32">
+    <section id="enquiry" className="bg-sand/40 py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-shell px-6 lg:px-8">
-        <div className="grid gap-16 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <div>
             <SectionHeading
               kicker="Enquiries"
               title="Tell us what you need"
               body="The more specific you are about grade, quantity and destination, the faster the price comes back."
             />
-            <div className="mt-10 space-y-2 text-[0.95rem] font-light text-stone">
+            <div className="mt-8 space-y-2 break-words text-[0.95rem] font-light text-stone sm:mt-10">
               <p>
                 <a href={"mailto:" + company.email} className="text-espresso no-underline hover:text-gold">
                   {company.email}
@@ -131,7 +132,7 @@ export default function Enquiry() {
               <button
                 type="submit"
                 disabled={sending}
-                className="bg-espresso px-9 py-3.5 text-sm font-light tracking-wide text-ivory transition-colors hover:bg-onyx disabled:opacity-60"
+                className="w-full bg-espresso px-9 py-3.5 text-sm font-light tracking-wide text-ivory transition-colors hover:bg-onyx disabled:opacity-60 sm:w-auto"
               >
                 {sending ? "Sending…" : "Send enquiry"}
               </button>

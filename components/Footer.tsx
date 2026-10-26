@@ -2,10 +2,10 @@ import { company, nav, products } from "@/lib/site";
 
 export default function Footer() {
   return (
-    <footer className="bg-onyx pb-8 pt-20 text-ivory/60">
+    <footer className="bg-onyx pb-8 pt-16 text-ivory/60 sm:pt-20">
       <div className="mx-auto max-w-shell px-6 lg:px-8">
-        <div className="grid gap-12 border-b border-ivory/12 pb-12 lg:grid-cols-[1.5fr_1fr_1fr]">
-          <div>
+        <div className="grid gap-10 border-b border-ivory/12 pb-12 sm:grid-cols-2 sm:gap-12 lg:grid-cols-[1.5fr_1fr_1fr]">
+          <div className="sm:col-span-2 lg:col-span-1">
             <p className="font-display text-3xl font-light text-ivory">
               {company.name}
               <span className="ml-2 align-middle text-[11px] tracking-wide2 text-champagne">
@@ -20,7 +20,7 @@ export default function Footer() {
                 </span>
               ))}
             </p>
-            <p className="mt-4 text-[0.92rem] font-light">
+            <p className="mt-4 break-words text-[0.92rem] font-light">
               <a href={"mailto:" + company.email} className="no-underline hover:text-champagne">
                 {company.email}
               </a>
@@ -60,7 +60,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-between gap-3 pt-6 text-[0.78rem] font-light text-ivory/40">
+        <div className="flex flex-col gap-2 pt-6 text-[0.78rem] font-light text-ivory/40 sm:flex-row sm:flex-wrap sm:justify-between sm:gap-3">
           <span>
             © {new Date().getFullYear()} {company.legalName} · IEC {company.iec} · FSSAI {company.fssai}
           </span>

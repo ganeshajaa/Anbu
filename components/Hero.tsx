@@ -2,44 +2,56 @@ import { stats, supply, terms } from "@/lib/site";
 
 export default function Hero() {
   return (
-    <section className="grain relative overflow-hidden bg-onyx pt-32 pb-20 text-ivory lg:pt-40 lg:pb-20">
+    <section className="grain relative overflow-hidden bg-onyx pt-28 pb-16 text-ivory sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-20">
       {/* one warm glow, low and off-centre — the single decorative move */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-40 top-1/3 h-[520px] w-[520px] rounded-full opacity-[0.18] blur-3xl"
+        className="glow-drift pointer-events-none absolute -left-40 top-1/3 h-[520px] w-[520px] rounded-full opacity-[0.18] blur-3xl"
         style={{ background: "radial-gradient(circle, #C8A96A 0%, transparent 70%)" }}
       />
 
       <div className="relative z-10 mx-auto max-w-shell px-6 lg:px-8">
-        <div className="grid items-end gap-14 lg:grid-cols-[1.3fr_0.85fr]">
+        <div className="grid items-end gap-10 lg:grid-cols-[1.3fr_0.85fr] lg:gap-14">
           <div>
-            <p className="font-display text-lg font-light italic text-champagne">
+            <p
+              className="hero-in font-display text-lg font-light italic text-champagne"
+              style={{ "--d": "100ms" } as React.CSSProperties}
+            >
               From South India's Finest, to the world.
             </p>
-            <div className="rule-gold my-7 max-w-[220px]" />
-            <h1 className="font-display text-[50px] font-light leading-[1.03] tracking-[-0.01em] text-ivory">
+            <div className="rule-gold rule-draw my-7 max-w-[220px]" />
+            <h1
+              className="hero-in font-display text-[clamp(2rem,6.2vw,3.125rem)] font-light leading-[1.05] tracking-[-0.01em] text-ivory"
+              style={{ "--d": "250ms" } as React.CSSProperties}
+            >
               “Building Reliable Partnerships
               <br />
                Across Global Markets”
               <br />
-             
+
             </h1>
-            <p className="mt-8 max-w-[46ch] text-[1.02rem] font-light leading-relaxed text-ivory/65">
+            <p
+              className="hero-in mt-8 max-w-[46ch] text-[1.02rem] font-light leading-relaxed text-ivory/65"
+              style={{ "--d": "450ms" } as React.CSSProperties}
+            >
               We buy direct from growers in Kerala, Karnataka and Tamil Nadu,
               clean and grade to your contract, test every lot in an accredited
               laboratory, and hand you the documents your customs broker expects.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div
+              className="hero-in mt-10 flex flex-wrap gap-4"
+              style={{ "--d": "650ms" } as React.CSSProperties}
+            >
               <a
                 href="#enquiry"
-                className="bg-champagne px-8 py-3.5 text-sm font-normal tracking-wide text-onyx no-underline transition-colors hover:bg-ivory"
+                className="w-full bg-champagne px-8 py-3.5 text-center text-sm sm:w-auto font-normal tracking-wide text-onyx no-underline transition-all duration-300 hover:-translate-y-0.5 hover:bg-ivory hover:shadow-[0_10px_30px_-10px_rgba(200,169,106,0.6)]"
               >
                 Request a quote
               </a>
               <a
                 href="#products"
-                className="border border-ivory/25 px-8 py-3.5 text-sm font-light tracking-wide text-ivory no-underline transition-colors hover:border-champagne hover:text-champagne"
+                className="w-full border border-ivory/25 px-8 py-3.5 text-center text-sm sm:w-auto font-light tracking-wide text-ivory no-underline transition-all duration-300 hover:-translate-y-0.5 hover:border-champagne hover:text-champagne"
               >
                 See the product list
               </a>
@@ -47,7 +59,10 @@ export default function Hero() {
           </div>
 
           {/* supply position panel */}
-          <aside className="border border-champagne/25 bg-espresso/40 p-7 backdrop-blur-sm">
+          <aside
+            className="hero-in border border-champagne/25 bg-espresso/40 p-5 backdrop-blur-sm transition-colors sm:p-7 duration-500 hover:border-champagne/50"
+            style={{ "--d": "800ms" } as React.CSSProperties}
+          >
             <p className="font-display text-xl font-light italic text-champagne">
               Current supply position
             </p>
@@ -62,6 +77,7 @@ export default function Hero() {
                       (s.state === "Ready" ? "text-ivory" : "text-champagne")
                     }
                   >
+                    {s.state === "Ready" && <span aria-hidden className="status-dot" />}
                     {s.state}
                   </dd>
                 </div>
