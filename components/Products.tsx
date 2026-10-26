@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionHeading from "./SectionHeading";
 import { products } from "@/lib/site";
 
@@ -7,13 +8,24 @@ export default function Products() {
       <div className="mx-auto max-w-shell px-6 lg:px-8">
         <SectionHeading
           kicker="The range"
-          title="Six lines, graded and packed to order"
+          title="Spices and snacks, packed to order"
           body="Every product below is machine-cleaned, graded and packed against your contract. Tell us the specification you buy to and we quote against it — or ask for our standard spec sheet to start from."
         />
 
         <div className="mt-16 grid gap-px border border-sand bg-sand sm:grid-cols-2 lg:grid-cols-3">
           {products.map((p) => (
             <article key={p.name} className="bg-ivory p-8">
+              {p.image && (
+                <div className="relative -mx-8 -mt-8 mb-6 aspect-[3/4] overflow-hidden bg-white">
+                  <Image
+                    src={p.image}
+                    alt={`${p.name} product packaging`}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              )}
               <span
                 aria-hidden
                 className="mb-6 block h-[3px] w-10"

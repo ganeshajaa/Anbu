@@ -36,6 +36,7 @@ export type Product = {
   name: string;
   latin: string;
   hue: string;
+  image?: string;
   specs: [string, string][];
 };
 
@@ -44,6 +45,7 @@ export const products: Product[] = [
     name: "Turmeric Powder",
     latin: "Curcuma longa",
     hue: "#D99B12",
+    image: "/turmiric-poweder.jpeg",
     specs: [
       ["Form", "Fingers / powder"],
       ["Curcumin", "3.0 – 5.0%"],
@@ -56,6 +58,7 @@ export const products: Product[] = [
     name: "Black pepper Powder",
     latin: "Piper nigrum",
     hue: "#4A382A",
+    image: "/pepper-powder.jpeg",
     specs: [
       ["Grade", "500 / 550 g/l"],
       ["Piperine", "Min 3.5%"],
@@ -68,6 +71,7 @@ export const products: Product[] = [
     name: "Moringa leaf powder",
     latin: "Moringa oleifera",
     hue: "#5C8144",
+    image: "/moringa-powder.jpeg",
     specs: [
       ["Mesh", "80 – 100"],
       ["Drying", "Shade dried"],
@@ -80,6 +84,7 @@ export const products: Product[] = [
     name: "Red chilli Powder",
     latin: "Capsicum annuum",
     hue: "#A8331E",
+    image: "/chilli-powder.jpeg",
     specs: [
       ["Varieties", "S17 · Byadgi · 334"],
       ["Heat", "8,000 – 40,000 SHU"],
