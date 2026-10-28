@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   title: "Anbu Spice Exports — Indian spices, sourced and shipped",
   description:
     "Export house shipping lab-tested Indian spices — turmeric, black pepper, cardamom, chilli and seed spices — to buyers in Europe, North America, Japan and the Gulf.",
+   verification: {
+    google: "google-site-verification=F4S63_Y22XxUNRq1Ugn0wgb08ExZKAAMZN989bZYJgE",
+},
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
